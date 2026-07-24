@@ -1,0 +1,10 @@
+*.db
+*.db-wal
+*.db-shm
+*.session
+*.log
+__pycache__/
+*.pyc
+.env
+scratch/
+tempmail/
