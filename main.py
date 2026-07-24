@@ -11,7 +11,8 @@ from contextlib import asynccontextmanager
 import aiohttp
 from telethon import TelegramClient, events, Button
 from telethon.sessions import MemorySession
-
+from keep import keep_alive
+keep_alive()
 # ── credentials ──────────────────────────────────────────────────────────────
 API_ID    = 30219110
 API_HASH  = "06ddc0cbe1980d5cee7ae5274933a5e2"
