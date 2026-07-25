@@ -23,7 +23,7 @@ BOT_USERNAME = "BLCXCBOT"  # Set this to your actual bot username (without @)
 ADMIN_IDS = [5048281046]  # Replace with your actual admin user ID(s)
 ADMIN_STATES = {}  # Stores active admin interactive prompt state
 
-# ── RPC config ───────────────────────────────────────────────────────────────
+# ── RPC config (15 EVM Chains) ───────────────────────────────────────────────
 RPC_ENDPOINTS = {
     "eth": [
         "https://1rpc.io/eth",
@@ -43,12 +43,77 @@ RPC_ENDPOINTS = {
         "https://1rpc.io/matic",
         "https://polygon.llamarpc.com",
     ],
+    "arbitrum": [
+        "https://arb1.arbitrum.io/rpc",
+        "https://1rpc.io/arb",
+        "https://arbitrum.llamarpc.com",
+    ],
+    "optimism": [
+        "https://mainnet.optimism.io",
+        "https://1rpc.io/op",
+        "https://optimism.llamarpc.com",
+    ],
+    "base": [
+        "https://mainnet.base.org",
+        "https://1rpc.io/base",
+        "https://base.llamarpc.com",
+    ],
+    "avalanche": [
+        "https://api.avax.network/ext/bc/C/rpc",
+        "https://1rpc.io/avax/c",
+        "https://avalanche.llamarpc.com",
+    ],
+    "fantom": [
+        "https://rpc.ftm.tools",
+        "https://1rpc.io/ftm",
+        "https://fantom.drpc.org",
+    ],
+    "cronos": [
+        "https://evm.cronos.org",
+        "https://1rpc.io/cro",
+    ],
+    "zksync": [
+        "https://mainnet.era.zksync.io",
+        "https://1rpc.io/zksync20",
+    ],
+    "linea": [
+        "https://rpc.linea.build",
+        "https://1rpc.io/linea",
+    ],
+    "blast": [
+        "https://rpc.blast.io",
+        "https://blast.drpc.org",
+    ],
+    "mantle": [
+        "https://rpc.mantle.xyz",
+        "https://1rpc.io/mantle",
+    ],
+    "celo": [
+        "https://forno.celo.org",
+        "https://1rpc.io/celo",
+    ],
+    "moonbeam": [
+        "https://rpc.api.moonbeam.network",
+        "https://1rpc.io/glmr",
+    ],
 }
 
 CHAIN_INFO = {
-    "eth":     {"name": "Ethereum",        "native": "ETH",       "block_time": 12},
-    "bsc":     {"name": "BNB Smart Chain", "native": "BNB",       "block_time": 1.5},
-    "polygon": {"name": "Polygon",         "native": "MATIC/POL", "block_time": 2},
+    "eth":       {"name": "Ethereum",          "native": "ETH",       "block_time": 12},
+    "bsc":       {"name": "BNB Smart Chain",   "native": "BNB",       "block_time": 1.5},
+    "polygon":   {"name": "Polygon",           "native": "MATIC/POL", "block_time": 2},
+    "arbitrum":  {"name": "Arbitrum One",      "native": "ETH",       "block_time": 0.25},
+    "optimism":  {"name": "OP Mainnet",        "native": "ETH",       "block_time": 2},
+    "base":      {"name": "Base",              "native": "ETH",       "block_time": 2},
+    "avalanche": {"name": "Avalanche C-Chain", "native": "AVAX",      "block_time": 2},
+    "fantom":    {"name": "Fantom Opera",      "native": "FTM",       "block_time": 1},
+    "cronos":    {"name": "Cronos EVM",        "native": "CRO",       "block_time": 5},
+    "zksync":    {"name": "zkSync Era",        "native": "ETH",       "block_time": 1},
+    "linea":     {"name": "Linea",             "native": "ETH",       "block_time": 3},
+    "blast":     {"name": "Blast",             "native": "ETH",       "block_time": 2},
+    "mantle":    {"name": "Mantle",            "native": "MNT",       "block_time": 2},
+    "celo":      {"name": "Celo",              "native": "CELO",      "block_time": 5},
+    "moonbeam":  {"name": "Moonbeam",          "native": "GLMR",      "block_time": 12},
 }
 
 EVM_TOKENS = {
@@ -75,7 +140,58 @@ EVM_TOKENS = {
         {"symbol": "WBTC",   "contract": "0x1bfd67037b42c0d4067b8955404b1e40f3db87b1", "decimals": 8, "price_key": "BTC"},
         {"symbol": "WETH",   "contract": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619", "decimals": 18, "price_key": "ETH"},
     ],
+    "arbitrum": [
+        {"symbol": "ARB",  "contract": "0x912ce59144191c1204e64559fe8253a0e49e6548", "decimals": 18, "price_key": "ARB"},
+        {"symbol": "USDT", "contract": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9", "decimals": 6, "price_key": "USDT"},
+        {"symbol": "USDC", "contract": "0xaf88d065e77c8cc2239327c5edb3a432268e5831", "decimals": 6, "price_key": "USDC"},
+        {"symbol": "WETH", "contract": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1", "decimals": 18, "price_key": "ETH"},
+    ],
+    "optimism": [
+        {"symbol": "OP",   "contract": "0x4200000000000000000000000000000000000042", "decimals": 18, "price_key": "OP"},
+        {"symbol": "USDT", "contract": "0x94b008aa00579c1307b0ef2c499ad98a8ce58e58", "decimals": 6, "price_key": "USDT"},
+        {"symbol": "USDC", "contract": "0x0b2c639c533813f4aa9d7837caf62653d097ff85", "decimals": 6, "price_key": "USDC"},
+        {"symbol": "WETH", "contract": "0x4200000000000000000000000000000000000006", "decimals": 18, "price_key": "ETH"},
+    ],
+    "base": [
+        {"symbol": "USDC", "contract": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913", "decimals": 6, "price_key": "USDC"},
+        {"symbol": "WETH", "contract": "0x4200000000000000000000000000000000000006", "decimals": 18, "price_key": "ETH"},
+        {"symbol": "AERO", "contract": "0x940181a94a35a4569e4529a3cdfb74e38fd98631", "decimals": 18, "price_key": "AERO"},
+    ],
+    "avalanche": [
+        {"symbol": "USDT.e", "contract": "0xc7198437980c041c805a1edcba50c145db200280", "decimals": 6, "price_key": "USDT"},
+        {"symbol": "USDC.e", "contract": "0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664", "decimals": 6, "price_key": "USDC"},
+        {"symbol": "WAVAX",  "contract": "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7", "decimals": 18, "price_key": "AVAX"},
+    ],
+    "fantom": [
+        {"symbol": "USDT", "contract": "0x049d68029688eabf473097a2fc38ef61633a3c7a", "decimals": 6, "price_key": "USDT"},
+        {"symbol": "USDC", "contract": "0x28a92ed536a048880c454688b6651474149fa894", "decimals": 6, "price_key": "USDC"},
+    ],
+    "cronos": [
+        {"symbol": "USDC", "contract": "0xc21223249ca139d8b605df26537c62b66236b225", "decimals": 6, "price_key": "USDC"},
+    ],
+    "zksync": [
+        {"symbol": "ZK",   "contract": "0x5a7d6b2f92c77fad684d2a1613d1578f9f8702c1", "decimals": 18, "price_key": "ZK"},
+        {"symbol": "USDC", "contract": "0x1d17cbcf0d6d143135ae902365d2e5e2a16538d4", "decimals": 6, "price_key": "USDC"},
+    ],
+    "linea": [
+        {"symbol": "USDC", "contract": "0x176211869ca2b568f2a7d4ee941e073a821ee1ff", "decimals": 6, "price_key": "USDC"},
+    ],
+    "blast": [
+        {"symbol": "USDB",  "contract": "0x4300000000000000000000000000000000000003", "decimals": 18, "price_key": "USDT"},
+        {"symbol": "BLAST", "contract": "0xb1a5700fa2358173fe465e6ea4f2897fa1418774", "decimals": 18, "price_key": "BLAST"},
+    ],
+    "mantle": [
+        {"symbol": "USDT", "contract": "0x201ebd9539c0d5e11b4f25539ab426177b9015c7", "decimals": 6, "price_key": "USDT"},
+        {"symbol": "USDC", "contract": "0x09bc4e0d864854c6afb64906588019d53647c037", "decimals": 6, "price_key": "USDC"},
+    ],
+    "celo": [
+        {"symbol": "cUSD", "contract": "0x765de816845861e75a25fca122bb6898b8b1282a", "decimals": 18, "price_key": "USDT"},
+    ],
+    "moonbeam": [
+        {"symbol": "USDC", "contract": "0x931715fee2d06333043d11f65018464f294be780", "decimals": 6, "price_key": "USDC"},
+    ],
 }
+
 TRANSFER_TOPIC    = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
 TRX_USDT_CONTRACT = "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"
 TRX_USDC_CONTRACT = "TE7oViNDFDADuLVH57eRX8Vus976oK2R45"
@@ -85,6 +201,13 @@ PRICE_REFRESH_SECONDS     = 600
 STARTING_CREDITS          = 4
 REFERRAL_REWARD_CREDITS   = 3
 DB_PATH                   = "wallet_bot.db"
+
+# Solana RPC nodes
+SOL_RPC_ENDPOINTS = [
+    "https://solana-rpc.publicnode.com",
+    "https://api.mainnet-beta.solana.com",
+    "https://rpc.ankr.com/solana",
+]
 
 # ── global price cache ────────────────────────────────────────────────────────
 PRICES: dict[str, float] = {}
@@ -222,7 +345,6 @@ async def get_credits(user_id: int) -> int:
 
 
 async def deduct_credit(user_id: int) -> bool:
-    """Deduct 1 credit. Returns True if successful, False if no credits."""
     async with aiosqlite.connect(DB_PATH) as db:
         async with db.execute("SELECT credits FROM users WHERE user_id = ?", (user_id,)) as cursor:
             row = await cursor.fetchone()
@@ -235,7 +357,6 @@ async def deduct_credit(user_id: int) -> bool:
 
 
 async def add_credits(user_id: int, amount: int) -> int:
-    """Add credits to a user. Returns new credit balance."""
     async with aiosqlite.connect(DB_PATH) as db:
         async with db.execute("SELECT credits FROM users WHERE user_id = ?", (user_id,)) as cursor:
             row = await cursor.fetchone()
@@ -248,7 +369,6 @@ async def add_credits(user_id: int, amount: int) -> int:
 
 
 async def remove_credits(user_id: int, amount: int) -> int:
-    """Remove credits from a user. Never goes below 0. Returns new balance."""
     async with aiosqlite.connect(DB_PATH) as db:
         async with db.execute("SELECT credits FROM users WHERE user_id = ?", (user_id,)) as cursor:
             row = await cursor.fetchone()
@@ -261,20 +381,14 @@ async def remove_credits(user_id: int, amount: int) -> int:
 
 
 async def process_referral(referrer_id: int, referred_user_id: int) -> bool:
-    """
-    Process a referral. Returns True if reward was granted.
-    Guards: no self-referral, no duplicate reward, referrer must exist.
-    """
     if referrer_id == referred_user_id:
         return False
 
     async with aiosqlite.connect(DB_PATH) as db:
-        # Check referrer exists
         async with db.execute("SELECT user_id FROM users WHERE user_id = ?", (referrer_id,)) as cursor:
             if not await cursor.fetchone():
                 return False
 
-        # Check referred user hasn't already been rewarded
         async with db.execute(
             "SELECT referral_rewarded FROM users WHERE user_id = ?", (referred_user_id,)
         ) as cursor:
@@ -282,24 +396,20 @@ async def process_referral(referrer_id: int, referred_user_id: int) -> bool:
             if not row or row[0] != 0:
                 return False
 
-        # Check no duplicate referral entry
         async with db.execute(
             "SELECT id FROM referrals WHERE referred_user = ?", (referred_user_id,)
         ) as cursor:
             if await cursor.fetchone():
                 return False
 
-        # Grant reward to referrer
         await db.execute(
             "UPDATE users SET credits = credits + ? WHERE user_id = ?",
             (REFERRAL_REWARD_CREDITS, referrer_id)
         )
-        # Mark referred user as rewarded
         await db.execute(
             "UPDATE users SET referral_rewarded = 1 WHERE user_id = ?",
             (referred_user_id,)
         )
-        # Record referral
         now = datetime.now(timezone.utc).isoformat()
         await db.execute(
             "INSERT INTO referrals (referrer_id, referred_user, reward, created_at) VALUES (?, ?, ?, ?)",
@@ -322,11 +432,20 @@ async def get_referral_count(user_id: int) -> int:
 #  PRICES
 # ═══════════════════════════════════════════════════════════════════════════════
 
-ALL_PRICE_KEYS = ("ETH", "BNB", "POL", "MATIC", "BTC", "LTC", "TRX", "TON", "USDT", "USDC", "DAI")
+ALL_PRICE_KEYS = (
+    "ETH", "BNB", "POL", "MATIC", "BTC", "LTC", "TRX", "TON", "USDT", "USDC", "DAI",
+    "SOL", "DOGE", "ARB", "OP", "AVAX", "XRP", "ADA", "BCH", "SUI", "KAS", "AERO",
+    "FTM", "CRO", "ZK", "MNT", "CELO", "GLMR", "APT", "ATOM", "NEAR", "XLM", "ALGO", "BLAST"
+)
 
 
 async def _prices_coingecko(session: aiohttp.ClientSession) -> dict[str, float]:
-    ids = "ethereum,binancecoin,polygon-ecosystem-token,bitcoin,litecoin,tron,the-open-network,usd-coin,dai"
+    ids = (
+        "ethereum,binancecoin,polygon-ecosystem-token,bitcoin,litecoin,tron,"
+        "the-open-network,usd-coin,dai,solana,dogecoin,arbitrum,optimism,"
+        "avalanche-2,ripple,cardano,bitcoin-cash,sui,kaspa,aerodrome-finance,"
+        "fantom,crypto-com-chain,zksync,mantle,celo,moonbeam,aptos,cosmos,near,stellar,algorand,blast"
+    )
     async with session.get(
         "https://api.coingecko.com/api/v3/simple/price",
         params={"ids": ids, "vs_currencies": "usd"},
@@ -335,25 +454,50 @@ async def _prices_coingecko(session: aiohttp.ClientSession) -> dict[str, float]:
         d = await r.json(content_type=None)
     pol_price = d.get("polygon-ecosystem-token", {}).get("usd", 0)
     return {
-        "ETH":   d.get("ethereum",         {}).get("usd", 0),
-        "BNB":   d.get("binancecoin",      {}).get("usd", 0),
+        "ETH":   d.get("ethereum",          {}).get("usd", 0),
+        "BNB":   d.get("binancecoin",       {}).get("usd", 0),
         "POL":   pol_price,
         "MATIC": pol_price,
-        "BTC":   d.get("bitcoin",          {}).get("usd", 0),
-        "LTC":   d.get("litecoin",         {}).get("usd", 0),
-        "TRX":   d.get("tron",             {}).get("usd", 0),
-        "TON":   d.get("the-open-network", {}).get("usd", 0),
+        "BTC":   d.get("bitcoin",           {}).get("usd", 0),
+        "LTC":   d.get("litecoin",          {}).get("usd", 0),
+        "TRX":   d.get("tron",              {}).get("usd", 0),
+        "TON":   d.get("the-open-network",  {}).get("usd", 0),
         "USDT":  1.0,
-        "USDC":  d.get("usd-coin",         {}).get("usd", 1.0),
-        "DAI":   d.get("dai",              {}).get("usd", 1.0),
+        "USDC":  d.get("usd-coin",          {}).get("usd", 1.0),
+        "DAI":   d.get("dai",               {}).get("usd", 1.0),
+        "SOL":   d.get("solana",            {}).get("usd", 0),
+        "DOGE":  d.get("dogecoin",          {}).get("usd", 0),
+        "ARB":   d.get("arbitrum",          {}).get("usd", 0),
+        "OP":    d.get("optimism",          {}).get("usd", 0),
+        "AVAX":  d.get("avalanche-2",       {}).get("usd", 0),
+        "XRP":   d.get("ripple",            {}).get("usd", 0),
+        "ADA":   d.get("cardano",           {}).get("usd", 0),
+        "BCH":   d.get("bitcoin-cash",      {}).get("usd", 0),
+        "SUI":   d.get("sui",               {}).get("usd", 0),
+        "KAS":   d.get("kaspa",             {}).get("usd", 0),
+        "AERO":  d.get("aerodrome-finance", {}).get("usd", 0),
+        "FTM":   d.get("fantom",            {}).get("usd", 0),
+        "CRO":   d.get("crypto-com-chain",  {}).get("usd", 0),
+        "ZK":    d.get("zksync",            {}).get("usd", 0),
+        "MNT":   d.get("mantle",            {}).get("usd", 0),
+        "CELO":  d.get("celo",              {}).get("usd", 0),
+        "GLMR":  d.get("moonbeam",          {}).get("usd", 0),
+        "APT":   d.get("aptos",             {}).get("usd", 0),
+        "ATOM":  d.get("cosmos",            {}).get("usd", 0),
+        "NEAR":  d.get("near",              {}).get("usd", 0),
+        "XLM":   d.get("stellar",           {}).get("usd", 0),
+        "ALGO":  d.get("algorand",          {}).get("usd", 0),
+        "BLAST": d.get("blast",             {}).get("usd", 0),
     }
 
 
 async def _prices_coinbase(session: aiohttp.ClientSession) -> dict[str, float]:
     coins = {
-        "BTC": "BTC", "ETH": "ETH", "BNB": "BNB",
-        "LTC": "LTC", "TRX": "TRX", "TON": "TON",
-        "POL": "POL", "USDC": "USDC", "DAI": "DAI",
+        "BTC": "BTC", "ETH": "ETH", "BNB": "BNB", "LTC": "LTC", "TRX": "TRX", "TON": "TON",
+        "POL": "POL", "USDC": "USDC", "DAI": "DAI", "SOL": "SOL", "DOGE": "DOGE",
+        "ARB": "ARB", "OP": "OP", "AVAX": "AVAX", "XRP": "XRP", "ADA": "ADA", "BCH": "BCH",
+        "SUI": "SUI", "FTM": "FTM", "CRO": "CRO", "CELO": "CELO", "APT": "APT", "ATOM": "ATOM",
+        "NEAR": "NEAR", "XLM": "XLM", "ALGO": "ALGO"
     }
     out: dict[str, float] = {"USDT": 1.0, "USDC": 1.0, "DAI": 1.0}
 
@@ -380,6 +524,13 @@ async def _prices_binance(session: aiohttp.ClientSession) -> dict[str, float]:
         "ETHUSDT": "ETH", "BNBUSDT": "BNB", "BTCUSDT": "BTC",
         "LTCUSDT": "LTC", "TRXUSDT": "TRX", "TONUSDT": "TON",
         "POLUSDT": "POL", "USDCUSDT": "USDC", "DAIUSDT": "DAI",
+        "SOLUSDT": "SOL", "DOGEUSDT": "DOGE", "ARBUSDT": "ARB",
+        "OPUSDT": "OP", "AVAXUSDT": "AVAX", "XRPUSDT": "XRP",
+        "ADAUSDT": "ADA", "BCHUSDT": "BCH", "SUIUSDT": "SUI",
+        "KASUSDT": "KAS", "FTMUSDT": "FTM", "CROUSDT": "CRO",
+        "ZKUSDT": "ZK", "MNTUSDT": "MNT", "CELOUSDT": "CELO",
+        "GLMRUSDT": "GLMR", "APTUSDT": "APT", "ATOMUSDT": "ATOM",
+        "NEARUSDT": "NEAR", "XLMUSDT": "XLM", "ALGOUSDT": "ALGO"
     }
     symbols = list(sym_map.keys())
     async with session.get(
@@ -457,11 +608,11 @@ async def rpc_race(session: aiohttp.ClientSession, chain: str,
             return result
         except Exception as e:
             errors.append(str(e))
-    raise ApiError(f"all RPCs failed for {chain}/{method}: {errors[-1]}")
+    raise ApiError(f"all RPCs failed for {chain}/{method}: {errors[-1] if errors else 'unknown'}")
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-#  EVM HELPERS
+#  EVM HELPERS (15 Chains)
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def normalize_evm_address(address: str) -> str:
@@ -489,67 +640,6 @@ async def get_erc20_balance(session, address, chain, contract_address, decimals)
     return int(res, 16) / (10 ** decimals)
 
 
-async def get_block_timestamp(session, chain, block_number) -> datetime:
-    res = await rpc_race(session, chain, "eth_getBlockByNumber",
-                         [hex(block_number), False], timeout=5)
-    return datetime.fromtimestamp(int(res["timestamp"], 16), tz=timezone.utc)
-
-
-async def get_recent_token_transfers(session, address, chain, contract_address, decimals, limit=5):
-    padded_topic = "0x" + address[2:].rjust(64, "0")
-    latest_hex   = await rpc_race(session, chain, "eth_blockNumber", [])
-    latest       = int(latest_hex, 16)
-
-    logs       = None
-    used_range = None
-    for rng in (5000, 2000, 500):
-        from_block = max(0, latest - rng)
-        try:
-            logs = await rpc_race(session, chain, "eth_getLogs", [{
-                "address":   contract_address,
-                "fromBlock": hex(from_block),
-                "toBlock":   "latest",
-                "topics":    [TRANSFER_TOPIC, None, padded_topic],
-            }])
-            used_range = rng
-            break
-        except ApiError:
-            continue
-
-    if logs is None:
-        raise ApiError("eth_getLogs unavailable")
-
-    transfers = []
-    unique_blocks = {int(log["blockNumber"], 16) for log in logs[-limit:]}
-    async def _ts(bn):
-        try:
-            return bn, await get_block_timestamp(session, chain, bn)
-        except ApiError:
-            return bn, None
-
-    ts_results = dict(await asyncio.gather(*[_ts(bn) for bn in unique_blocks]))
-
-    for log in reversed(logs):
-        amount    = int(log["data"], 16) / (10 ** decimals)
-        from_addr = "0x" + log["topics"][1][-40:]
-        block_num = int(log["blockNumber"], 16)
-        transfers.append({
-            "amount": amount,
-            "from":   from_addr,
-            "hash":   log["transactionHash"],
-            "time":   ts_results.get(block_num),
-        })
-        if len(transfers) >= limit:
-            break
-
-    window_hours = (used_range * CHAIN_INFO[chain]["block_time"]) / 3600
-    return transfers, window_hours
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-#  PER-CHAIN EVM
-# ═══════════════════════════════════════════════════════════════════════════════
-
 async def check_evm_chain(session, addr, chain) -> dict:
     info   = CHAIN_INFO[chain]
     result = {
@@ -561,7 +651,7 @@ async def check_evm_chain(session, addr, chain) -> dict:
     }
 
     native_task = asyncio.create_task(get_native_balance(session, addr, chain))
-    tokens_to_check = EVM_TOKENS[chain]
+    tokens_to_check = EVM_TOKENS.get(chain, [])
     token_tasks = [
         asyncio.create_task(get_erc20_balance(session, addr, chain, token["contract"], token["decimals"]))
         for token in tokens_to_check
@@ -574,40 +664,20 @@ async def check_evm_chain(session, addr, chain) -> dict:
     except Exception as e:
         result["errors"].append(f"{info['native']}: {e}")
 
-    positive_balance_tokens = []
     for token, task in zip(tokens_to_check, token_tasks):
         try:
             bal = task.result()
             if bal > 0.000001:
-                positive_balance_tokens.append((token, bal))
+                result["tokens"].append({
+                    "symbol": token["symbol"],
+                    "balance": bal,
+                    "price_key": token["price_key"],
+                })
         except Exception as e:
             result["errors"].append(f"{token['symbol']}: {e}")
 
-    if positive_balance_tokens:
-        transfer_tasks = [
-            get_recent_token_transfers(session, addr, chain, token["contract"], token["decimals"])
-            for token, _ in positive_balance_tokens
-        ]
-        transfer_results = await asyncio.gather(*transfer_tasks, return_exceptions=True)
-
-        for (token, bal), tx_res in zip(positive_balance_tokens, transfer_results):
-            token_entry = {
-                "symbol": token["symbol"],
-                "balance": bal,
-                "price_key": token["price_key"],
-                "transfers": [],
-                "window_hours": 0.0
-            }
-            if not isinstance(tx_res, Exception):
-                token_entry["transfers"], token_entry["window_hours"] = tx_res
-            result["tokens"].append(token_entry)
-
     return result
 
-
-# ═══════════════════════════════════════════════════════════════════════════════
-#  FORMAT FUNCTIONS
-# ═══════════════════════════════════════════════════════════════════════════════
 
 async def format_evm_wallet(session, raw_address):
     try:
@@ -617,17 +687,19 @@ async def format_evm_wallet(session, raw_address):
 
     lines = [
         f"Address : {addr}",
-        f"Type    : EVM (ETH / BSC / Polygon)",
+        f"Type    : EVM Multi-Chain (15 Networks)",
         f"Checked : {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
     ]
 
-    chain_results = await asyncio.gather(
-        check_evm_chain(session, addr, "eth"),
-        check_evm_chain(session, addr, "bsc"),
-        check_evm_chain(session, addr, "polygon"),
-    )
+    evm_chains = list(RPC_ENDPOINTS.keys())
+    chain_results = await asyncio.gather(*[check_evm_chain(session, addr, c) for c in evm_chains])
 
-    native_key = {"eth": "ETH", "bsc": "BNB", "polygon": "POL"}
+    native_key = {
+        "eth": "ETH", "bsc": "BNB", "polygon": "POL", "arbitrum": "ETH",
+        "optimism": "ETH", "base": "ETH", "avalanche": "AVAX", "fantom": "FTM",
+        "cronos": "CRO", "zksync": "ETH", "linea": "ETH", "blast": "ETH",
+        "mantle": "MNT", "celo": "CELO", "moonbeam": "GLMR"
+    }
     grand_totals = {}
     grand_usd  = 0.0
     any_error  = False
@@ -638,39 +710,26 @@ async def format_evm_wallet(session, raw_address):
         native_usd   = r["native"] * np
         chain_usd    = native_usd
 
-        grand_totals[native_key[chain]] = grand_totals.get(native_key[chain], 0.0) + r["native"]
+        if r["native"] > 0.000001 or r["tokens"]:
+            grand_totals[native_key[chain]] = grand_totals.get(native_key[chain], 0.0) + r["native"]
 
-        lines.append("")
-        lines.append(f"[{r['name']}]")
-        lines.append(f"  {r['native_sym']:<10}: {r['native']:.8f}  (~${native_usd:.2f})")
+            lines.append("")
+            lines.append(f"[{r['name']}]")
+            lines.append(f"  {r['native_sym']:<10}: {r['native']:.8f}  (~${native_usd:.2f})")
 
-        for t in r["tokens"]:
-            tp = PRICES.get(t["price_key"], 0.0)
-            t_usd = t["balance"] * tp
-            chain_usd += t_usd
-            grand_totals[t["symbol"]] = grand_totals.get(t["symbol"], 0.0) + t["balance"]
-            lines.append(f"  {t['symbol']:<10}: {t['balance']:.6f}  (~${t_usd:.2f})")
+            for t in r["tokens"]:
+                tp = PRICES.get(t["price_key"], 0.0)
+                t_usd = t["balance"] * tp
+                chain_usd += t_usd
+                grand_totals[t["symbol"]] = grand_totals.get(t["symbol"], 0.0) + t["balance"]
+                lines.append(f"  {t['symbol']:<10}: {t['balance']:.6f}  (~${t_usd:.2f})")
 
-        lines.append(f"  Chain USD : ${chain_usd:.2f}")
-
-        for t in r["tokens"]:
-            if t["transfers"]:
-                lines.append(f"  Recent incoming {t['symbol']} (last ~{t['window_hours']:.1f}h):")
-                for tx in t["transfers"]:
-                    when = tx["time"].strftime("%Y-%m-%d %H:%M UTC") if tx["time"] else "?"
-                    lines.append(f"    +{tx['amount']:.6f} {t['symbol']} from {tx['from']} {when} tx:{tx['hash'][:12]}...")
-
-        for err in r["errors"]:
-            lines.append(f"  ERROR: {err}")
-            any_error = True
+            lines.append(f"  Chain USD : ${chain_usd:.2f}")
 
         grand_usd += chain_usd
 
     lines.append("")
     lines.append("─" * 38)
-    if any_error:
-        lines.append("WARNING: some chains had errors — totals may be incomplete.")
-
     for sym, tot in sorted(grand_totals.items()):
         if tot > 0.000001:
             lines.append(f"TOTAL {sym:<7} : {tot:.6f}")
@@ -680,6 +739,449 @@ async def format_evm_wallet(session, raw_address):
     lines.append("✓ FUNDS FOUND" if grand_usd > 0.01 else "No funds detected")
 
     return lines, grand_usd
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+#  SOLANA HELPERS
+# ═══════════════════════════════════════════════════════════════════════════════
+
+async def sol_rpc_race(session: aiohttp.ClientSession, method: str, params: list) -> any:
+    payload = {"jsonrpc": "2.0", "id": 1, "method": method, "params": params}
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+    for url in SOL_RPC_ENDPOINTS:
+        try:
+            async with session.post(url, json=payload, headers=headers, timeout=aiohttp.ClientTimeout(total=8)) as r:
+                data = await r.json(content_type=None)
+                if "result" in data:
+                    return data["result"]
+        except Exception:
+            continue
+    raise ApiError("all Solana RPCs failed")
+
+
+async def format_sol_wallet(session, address):
+    lines = [
+        f"Address : {address}",
+        f"Type    : Solana (SOL + SPL Tokens)",
+        f"Checked : {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
+        "",
+    ]
+    sol_bal  = 0.0
+    tokens   = []
+    total_usd = 0.0
+
+    async def _sol_balance():
+        res = await sol_rpc_race(session, "getBalance", [address])
+        return (res.get("value", 0) or 0) / 1e9
+
+    async def _spl_tokens():
+        res = await sol_rpc_race(session, "getTokenAccountsByOwner", [
+            address,
+            {"programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"},
+            {"encoding": "jsonParsed"}
+        ])
+        parsed_tokens = []
+        for account in res.get("value", []):
+            try:
+                info = account["account"]["data"]["parsed"]["info"]
+                mint = info["mint"]
+                token_amount = info["tokenAmount"]
+                ui_amount = token_amount.get("uiAmount", 0) or 0
+                if ui_amount > 0:
+                    sym = "SPL"
+                    if mint == "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v":
+                        sym = "USDC"
+                    elif mint == "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB":
+                        sym = "USDT"
+                    elif mint == "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263":
+                        sym = "BONK"
+                    parsed_tokens.append((sym, ui_amount))
+            except Exception:
+                continue
+        return parsed_tokens
+
+    bal_task, tokens_task = await asyncio.gather(_sol_balance(), _spl_tokens(), return_exceptions=True)
+
+    if not isinstance(bal_task, Exception):
+        sol_bal = bal_task
+        sol_usd = sol_bal * PRICES.get("SOL", 0.0)
+        total_usd += sol_usd
+        lines.append(f"SOL        : {sol_bal:.6f}  (~${sol_usd:.2f})")
+    else:
+        lines.append(f"SOL Balance Error: {bal_task}")
+
+    if not isinstance(tokens_task, Exception) and tokens_task:
+        for sym, amt in tokens_task:
+            price = PRICES.get(sym, 1.0 if sym in ("USDC", "USDT") else 0.0)
+            t_usd = amt * price
+            total_usd += t_usd
+            lines.append(f"{sym:<10}: {amt:.6f}  (~${t_usd:.2f})")
+
+    lines.append("")
+    lines.append("─" * 38)
+    lines.append(f"TOTAL SOL  : {sol_bal:.6f}")
+    lines.append(f"TOTAL USD  : ${total_usd:.2f}")
+    lines.append("─" * 38)
+    lines.append("✓ FUNDS FOUND" if total_usd > 0.01 else "No SOL balance")
+
+    return lines, total_usd
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+#  ADDITIONAL NON-EVM CHAINS (APT, ATOM, NEAR, XLM, ALGO, DOGE, XRP, ADA, BCH, SUI, KAS)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+async def format_apt_wallet(session, address):
+    lines = [
+        f"Address : {address}",
+        f"Type    : Aptos (APT)",
+        f"Checked : {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
+        "",
+    ]
+    balance     = 0.0
+    balance_usd = 0.0
+    try:
+        url = f"https://fullnode.mainnet.aptoslabs.com/v1/accounts/{address}/resources"
+        async with session.get(url, timeout=aiohttp.ClientTimeout(total=8)) as r:
+            if r.status == 200:
+                data = await r.json(content_type=None)
+                for res in data:
+                    if res.get("type") == "0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>":
+                        balance = int(res.get("data", {}).get("coin", {}).get("value", 0)) / 1e8
+                        break
+    except Exception as e:
+        lines.append(f"ERROR: {e}")
+
+    balance_usd = balance * PRICES.get("APT", 0.0)
+    lines.append(f"APT        : {balance:.6f}  (~${balance_usd:.2f})")
+    lines.append("")
+    lines.append("─" * 38)
+    lines.append(f"TOTAL APT  : {balance:.6f}")
+    lines.append(f"TOTAL USD  : ${balance_usd:.2f}")
+    lines.append("─" * 38)
+    lines.append("✓ FUNDS FOUND" if balance_usd > 0.01 else "No APT balance")
+
+    return lines, balance_usd
+
+
+async def format_atom_wallet(session, address):
+    lines = [
+        f"Address : {address}",
+        f"Type    : Cosmos Hub (ATOM)",
+        f"Checked : {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
+        "",
+    ]
+    balance     = 0.0
+    balance_usd = 0.0
+    try:
+        url = f"https://cosmos-rest.publicnode.com/cosmos/bank/v1beta1/balances/{address}"
+        async with session.get(url, timeout=aiohttp.ClientTimeout(total=8)) as r:
+            if r.status == 200:
+                d = await r.json(content_type=None)
+                for b in d.get("balances", []):
+                    if b.get("denom") == "uatom":
+                        balance = int(b.get("amount", 0)) / 1e6
+                        break
+    except Exception as e:
+        lines.append(f"ERROR: {e}")
+
+    balance_usd = balance * PRICES.get("ATOM", 0.0)
+    lines.append(f"ATOM       : {balance:.6f}  (~${balance_usd:.2f})")
+    lines.append("")
+    lines.append("─" * 38)
+    lines.append(f"TOTAL ATOM : {balance:.6f}")
+    lines.append(f"TOTAL USD  : ${balance_usd:.2f}")
+    lines.append("─" * 38)
+    lines.append("✓ FUNDS FOUND" if balance_usd > 0.01 else "No ATOM balance")
+
+    return lines, balance_usd
+
+
+async def format_near_wallet(session, address):
+    lines = [
+        f"Address : {address}",
+        f"Type    : Near Protocol (NEAR)",
+        f"Checked : {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
+        "",
+    ]
+    balance     = 0.0
+    balance_usd = 0.0
+    payload = {
+        "jsonrpc": "2.0", "id": 1, "method": "query",
+        "params": {"request_type": "view_account", "finality": "final", "account_id": address}
+    }
+    try:
+        async with session.post("https://rpc.mainnet.near.org", json=payload, timeout=aiohttp.ClientTimeout(total=8)) as r:
+            d = await r.json(content_type=None)
+            if "result" in d:
+                balance = int(d["result"].get("amount", 0)) / 1e24
+    except Exception as e:
+        lines.append(f"ERROR: {e}")
+
+    balance_usd = balance * PRICES.get("NEAR", 0.0)
+    lines.append(f"NEAR       : {balance:.6f}  (~${balance_usd:.2f})")
+    lines.append("")
+    lines.append("─" * 38)
+    lines.append(f"TOTAL NEAR : {balance:.6f}")
+    lines.append(f"TOTAL USD  : ${balance_usd:.2f}")
+    lines.append("─" * 38)
+    lines.append("✓ FUNDS FOUND" if balance_usd > 0.01 else "No NEAR balance")
+
+    return lines, balance_usd
+
+
+async def format_xlm_wallet(session, address):
+    lines = [
+        f"Address : {address}",
+        f"Type    : Stellar (XLM)",
+        f"Checked : {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
+        "",
+    ]
+    balance     = 0.0
+    balance_usd = 0.0
+    try:
+        url = f"https://horizon.stellar.org/accounts/{address}"
+        async with session.get(url, timeout=aiohttp.ClientTimeout(total=8)) as r:
+            if r.status == 200:
+                d = await r.json(content_type=None)
+                for b in d.get("balances", []):
+                    if b.get("asset_type") == "native":
+                        balance = float(b.get("balance", 0))
+                        break
+    except Exception as e:
+        lines.append(f"ERROR: {e}")
+
+    balance_usd = balance * PRICES.get("XLM", 0.0)
+    lines.append(f"XLM        : {balance:.6f}  (~${balance_usd:.2f})")
+    lines.append("")
+    lines.append("─" * 38)
+    lines.append(f"TOTAL XLM  : {balance:.6f}")
+    lines.append(f"TOTAL USD  : ${balance_usd:.2f}")
+    lines.append("─" * 38)
+    lines.append("✓ FUNDS FOUND" if balance_usd > 0.01 else "No XLM balance")
+
+    return lines, balance_usd
+
+
+async def format_algo_wallet(session, address):
+    lines = [
+        f"Address : {address}",
+        f"Type    : Algorand (ALGO)",
+        f"Checked : {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
+        "",
+    ]
+    balance     = 0.0
+    balance_usd = 0.0
+    try:
+        url = f"https://mainnet-api.algonode.cloud/v2/accounts/{address}"
+        async with session.get(url, timeout=aiohttp.ClientTimeout(total=8)) as r:
+            if r.status == 200:
+                d = await r.json(content_type=None)
+                balance = int(d.get("account", {}).get("amount", 0)) / 1e6
+    except Exception as e:
+        lines.append(f"ERROR: {e}")
+
+    balance_usd = balance * PRICES.get("ALGO", 0.0)
+    lines.append(f"ALGO       : {balance:.6f}  (~${balance_usd:.2f})")
+    lines.append("")
+    lines.append("─" * 38)
+    lines.append(f"TOTAL ALGO : {balance:.6f}")
+    lines.append(f"TOTAL USD  : ${balance_usd:.2f}")
+    lines.append("─" * 38)
+    lines.append("✓ FUNDS FOUND" if balance_usd > 0.01 else "No ALGO balance")
+
+    return lines, balance_usd
+
+
+async def format_doge_wallet(session, address):
+    lines = [
+        f"Address : {address}",
+        f"Type    : DOGE / Dogecoin",
+        f"Checked : {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
+        "",
+    ]
+    balance     = 0.0
+    balance_usd = 0.0
+    try:
+        url = f"https://api.blockcypher.com/v1/doge/main/addrs/{address}/balance"
+        async with session.get(url, timeout=aiohttp.ClientTimeout(total=10)) as r:
+            if r.status == 200:
+                d = await r.json(content_type=None)
+                balance = d.get("balance", 0) / 1e8
+            else:
+                url_alt = f"https://dogechain.info/api/v1/address/balance/{address}"
+                async with session.get(url_alt, timeout=aiohttp.ClientTimeout(total=10)) as r2:
+                    d2 = await r2.json(content_type=None)
+                    balance = float(d2.get("balance", 0))
+    except Exception as e:
+        lines.append(f"ERROR: {e}")
+
+    balance_usd = balance * PRICES.get("DOGE", 0.0)
+    lines.append(f"DOGE       : {balance:.8f}  (~${balance_usd:.2f})")
+    lines.append("")
+    lines.append("─" * 38)
+    lines.append(f"TOTAL DOGE : {balance:.8f}")
+    lines.append(f"TOTAL USD  : ${balance_usd:.2f}")
+    lines.append("─" * 38)
+    lines.append("✓ FUNDS FOUND" if balance_usd > 0.01 else "No DOGE balance")
+
+    return lines, balance_usd
+
+
+async def format_xrp_wallet(session, address):
+    lines = [
+        f"Address : {address}",
+        f"Type    : Ripple (XRP)",
+        f"Checked : {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
+        "",
+    ]
+    balance     = 0.0
+    balance_usd = 0.0
+    payload = {"method": "account_info", "params": [{"account": address, "ledger_index": "validated"}]}
+    endpoints = ["https://s1.ripple.com:51234/", "https://xrplcluster.com"]
+    for ep in endpoints:
+        try:
+            async with session.post(ep, json=payload, timeout=aiohttp.ClientTimeout(total=8)) as r:
+                d = await r.json(content_type=None)
+                if "result" in d and "account_data" in d["result"]:
+                    balance = int(d["result"]["account_data"]["Balance"]) / 1e6
+                    break
+        except Exception:
+            continue
+
+    balance_usd = balance * PRICES.get("XRP", 0.0)
+    lines.append(f"XRP        : {balance:.6f}  (~${balance_usd:.2f})")
+    lines.append("")
+    lines.append("─" * 38)
+    lines.append(f"TOTAL XRP  : {balance:.6f}")
+    lines.append(f"TOTAL USD  : ${balance_usd:.2f}")
+    lines.append("─" * 38)
+    lines.append("✓ FUNDS FOUND" if balance_usd > 0.01 else "No XRP balance")
+
+    return lines, balance_usd
+
+
+async def format_ada_wallet(session, address):
+    lines = [
+        f"Address : {address}",
+        f"Type    : Cardano (ADA)",
+        f"Checked : {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
+        "",
+    ]
+    balance     = 0.0
+    balance_usd = 0.0
+    try:
+        url = "https://api.koios.rest/api/v1/address_info"
+        async with session.post(url, json={"_addresses": [address]}, timeout=aiohttp.ClientTimeout(total=10)) as r:
+            if r.status == 200:
+                data = await r.json(content_type=None)
+                if data and isinstance(data, list):
+                    balance = int(data[0].get("balance", 0)) / 1e6
+    except Exception as e:
+        lines.append(f"ERROR: {e}")
+
+    balance_usd = balance * PRICES.get("ADA", 0.0)
+    lines.append(f"ADA        : {balance:.6f}  (~${balance_usd:.2f})")
+    lines.append("")
+    lines.append("─" * 38)
+    lines.append(f"TOTAL ADA  : {balance:.6f}")
+    lines.append(f"TOTAL USD  : ${balance_usd:.2f}")
+    lines.append("─" * 38)
+    lines.append("✓ FUNDS FOUND" if balance_usd > 0.01 else "No ADA balance")
+
+    return lines, balance_usd
+
+
+async def format_bch_wallet(session, address):
+    lines = [
+        f"Address : {address}",
+        f"Type    : Bitcoin Cash (BCH)",
+        f"Checked : {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
+        "",
+    ]
+    balance     = 0.0
+    balance_usd = 0.0
+    clean_addr  = address.replace("bitcoincash:", "")
+    try:
+        url = f"https://api.blockchair.com/bitcoin-cash/dashboards/address/{clean_addr}"
+        async with session.get(url, timeout=aiohttp.ClientTimeout(total=10)) as r:
+            if r.status == 200:
+                d = await r.json(content_type=None)
+                addr_data = d.get("data", {}).get(clean_addr, {}).get("address", {})
+                balance = addr_data.get("balance", 0) / 1e8
+    except Exception as e:
+        lines.append(f"ERROR: {e}")
+
+    balance_usd = balance * PRICES.get("BCH", 0.0)
+    lines.append(f"BCH        : {balance:.8f}  (~${balance_usd:.2f})")
+    lines.append("")
+    lines.append("─" * 38)
+    lines.append(f"TOTAL BCH  : {balance:.8f}")
+    lines.append(f"TOTAL USD  : ${balance_usd:.2f}")
+    lines.append("─" * 38)
+    lines.append("✓ FUNDS FOUND" if balance_usd > 0.01 else "No BCH balance")
+
+    return lines, balance_usd
+
+
+async def format_kas_wallet(session, address):
+    lines = [
+        f"Address : {address}",
+        f"Type    : Kaspa (KAS)",
+        f"Checked : {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
+        "",
+    ]
+    balance     = 0.0
+    balance_usd = 0.0
+    try:
+        url = f"https://api.kaspa.org/addresses/{address}/balance"
+        async with session.get(url, timeout=aiohttp.ClientTimeout(total=10)) as r:
+            if r.status == 200:
+                d = await r.json(content_type=None)
+                balance = int(d.get("balance", 0)) / 1e8
+    except Exception as e:
+        lines.append(f"ERROR: {e}")
+
+    balance_usd = balance * PRICES.get("KAS", 0.0)
+    lines.append(f"KAS        : {balance:.6f}  (~${balance_usd:.2f})")
+    lines.append("")
+    lines.append("─" * 38)
+    lines.append(f"TOTAL KAS  : {balance:.6f}")
+    lines.append(f"TOTAL USD  : ${balance_usd:.2f}")
+    lines.append("─" * 38)
+    lines.append("✓ FUNDS FOUND" if balance_usd > 0.01 else "No KAS balance")
+
+    return lines, balance_usd
+
+
+async def format_sui_wallet(session, address):
+    lines = [
+        f"Address : {address}",
+        f"Type    : Sui Network (SUI)",
+        f"Checked : {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
+        "",
+    ]
+    balance     = 0.0
+    balance_usd = 0.0
+    payload = {"jsonrpc": "2.0", "id": 1, "method": "suix_getBalance", "params": [address, "0x2::sui::SUI"]}
+    try:
+        async with session.post("https://fullnode.mainnet.sui.io:443", json=payload, timeout=aiohttp.ClientTimeout(total=8)) as r:
+            d = await r.json(content_type=None)
+            if "result" in d:
+                balance = int(d["result"].get("totalBalance", 0)) / 1e9
+    except Exception as e:
+        lines.append(f"ERROR: {e}")
+
+    balance_usd = balance * PRICES.get("SUI", 0.0)
+    lines.append(f"SUI        : {balance:.6f}  (~${balance_usd:.2f})")
+    lines.append("")
+    lines.append("─" * 38)
+    lines.append(f"TOTAL SUI  : {balance:.6f}")
+    lines.append(f"TOTAL USD  : ${balance_usd:.2f}")
+    lines.append("─" * 38)
+    lines.append("✓ FUNDS FOUND" if balance_usd > 0.01 else "No SUI balance")
+
+    return lines, balance_usd
 
 
 async def format_btc_wallet(session, address):
@@ -1065,24 +1567,103 @@ def normalize_ton_address(address: str) -> str:
 
 def detect_address_type(address: str) -> str:
     addr = address.strip()
+    # Cosmos (cosmos1...)
+    if addr.startswith("cosmos1"):
+        return "atom"
+    # Stellar (G... 56 chars)
+    if re.match(r"^G[A-Z2-7]{55}$", addr):
+        return "xlm"
+    # Algorand (58 uppercase chars)
+    if re.match(r"^[A-Z2-7]{58}$", addr):
+        return "algo"
+    # Near (.near)
+    if addr.endswith(".near"):
+        return "near"
+    # Sui / Aptos / Near 64-hex chars starting with 0x
+    if re.match(r"^0x[0-9a-fA-F]{64}$", addr):
+        return "sui_apt"
+    # EVM (40 hex characters starting with 0x)
     if re.match(r"^0x[0-9a-fA-F]{40}$", addr):
         return "evm"
+    # Tron (34 chars starting with T)
     if re.match(r"^T[1-9A-HJ-NP-Za-km-z]{33}$", addr):
         return "trx"
+    # Dogecoin (34 chars starting with D)
+    if re.match(r"^D[1-9A-HJ-NP-Za-km-z]{32,33}$", addr):
+        return "doge"
+    # Ripple XRP (24-34 chars starting with r)
+    if re.match(r"^r[0-9a-zA-Z]{24,34}$", addr):
+        return "xrp"
+    # Cardano (addr1...)
+    if re.match(r"^addr1[a-z0-9]{50,100}$", addr):
+        return "ada"
+    # Bitcoin Cash
+    if addr.startswith("bitcoincash:") or re.match(r"^[qp][a-z0-9]{41}$", addr):
+        return "bch"
+    # Kaspa (kaspa:...)
+    if addr.startswith("kaspa:"):
+        return "kas"
+    # TON (48 chars base64url or raw format)
     if re.match(r"^[A-Za-z0-9_-]{48}$", addr) or re.match(r"^-?\d+:[0-9a-fA-F]{64}$", addr):
         return "ton"
+    # Bitcoin
     if addr.lower().startswith("bc1") or re.match(r"^[13][a-zA-HJ-NP-Z0-9]{25,34}$", addr):
         return "btc"
+    # Litecoin
     if addr.lower().startswith("ltc1") or re.match(r"^[LM][a-zA-HJ-NP-Z0-9]{25,34}$", addr):
         return "ltc"
+    # Solana (Base58 32-44 chars)
+    if re.match(r"^[1-9A-HJ-NP-Za-km-z]{32,44}$", addr):
+        return "sol"
     return "unknown"
 
 
 async def format_wallet(session, raw_address) -> tuple[list[str], float] | None:
     addr      = raw_address.strip()
     addr_type = detect_address_type(addr)
+
     if addr_type == "evm":
         return await format_evm_wallet(session, addr)
+    if addr_type == "sol":
+        return await format_sol_wallet(session, addr)
+    if addr_type == "doge":
+        return await format_doge_wallet(session, addr)
+    if addr_type == "xrp":
+        return await format_xrp_wallet(session, addr)
+    if addr_type == "ada":
+        return await format_ada_wallet(session, addr)
+    if addr_type == "bch":
+        return await format_bch_wallet(session, addr)
+    if addr_type == "kas":
+        return await format_kas_wallet(session, addr)
+    if addr_type == "sui_apt":
+        # Check Sui & Aptos in parallel
+        sui_res, apt_res = await asyncio.gather(
+            format_sui_wallet(session, addr),
+            format_apt_wallet(session, addr),
+            return_exceptions=True
+        )
+        lines = []
+        tot_usd = 0.0
+        if not isinstance(sui_res, Exception) and sui_res:
+            l, u = sui_res
+            lines.extend(l)
+            tot_usd += u
+        if not isinstance(apt_res, Exception) and apt_res:
+            l, u = apt_res
+            if lines:
+                lines.append("")
+            lines.extend(l)
+            tot_usd += u
+        return lines, tot_usd
+    if addr_type == "atom":
+        return await format_atom_wallet(session, addr)
+    if addr_type == "near":
+        return await format_near_wallet(session, addr)
+    if addr_type == "xlm":
+        return await format_xlm_wallet(session, addr)
+    if addr_type == "algo":
+        return await format_algo_wallet(session, addr)
     if addr_type == "trx":
         return await format_trx_wallet(session, addr)
     if addr_type == "ton":
@@ -1125,19 +1706,12 @@ def get_referral_link(user_id: int) -> str:
 
 def build_start_message(user_id: int, credits: int) -> str:
     return (
-        "Wallet Balance Checker\n\n"
-        f"Credits Remaining: {credits}\n\n"
-        "Supported Wallets:\n\n"
-        "✓ Ethereum\n"
-        "✓ BNB Smart Chain\n"
-        "✓ Polygon\n"
-        "✓ Bitcoin\n"
-        "✓ Litecoin\n"
-        "✓ Tron\n"
-        "✓ TON\n\n"
-        "Just paste any personal wallet address and the bot will check it instantly.\n\n"
-        "Do not use exchange deposit addresses.\n"
-        "Binance, Bybit, OKX, Bitget, KuCoin, Gate.io, MEXC and BingX addresses will not return correct balances."
+        "👋 Welcome to Wallet Balance Checker!\n\n"
+        f"💳 Credits Remaining: {credits}\n\n"
+        "⚡ Quick Start:\n"
+        "Just paste any personal crypto wallet address into the chat to check balances & USD value instantly.\n\n"
+        "ℹ️ Type /help to view all 25 supported blockchain networks.\n"
+        "🔗 Type /refer to get your referral link & earn free credits."
     )
 
 
@@ -1153,11 +1727,10 @@ def build_no_credits_message(user_id: int) -> str:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-#  ANIMATION  (edit-in-place — all responses use a single message)
+#  ANIMATION
 # ═══════════════════════════════════════════════════════════════════════════════
 
 async def send_typing_text(event, full_text: str, words_per_step: int = 7, step_delay: float = 0.07):
-    """Send a plain-text message and animate it by editing in place."""
     word_ends = [m.end() for m in re.finditer(r"\S+", full_text)]
     if not word_ends:
         return await event.reply(full_text)
@@ -1179,7 +1752,6 @@ async def send_typing_text(event, full_text: str, words_per_step: int = 7, step_
 
 
 async def send_typing_code(event, full_text: str, words_per_step: int = 6, step_delay: float = 0.10, sent_message=None):
-    """Send a monospace code block and animate it by editing in place."""
     word_ends = [m.end() for m in re.finditer(r"\S+", full_text)]
     if not word_ends:
         if sent_message:
@@ -1214,7 +1786,6 @@ client = TelegramClient(MemorySession(), API_ID, API_HASH)
 # ── Notification Helpers ───────────────────────────────────────────────────────
 
 async def notify_user(user_id: int, message: str):
-    """Send a notification to a user; silently ignore if unreachable."""
     try:
         await client.send_message(user_id, message)
     except Exception:
@@ -1222,7 +1793,6 @@ async def notify_user(user_id: int, message: str):
 
 
 async def notify_referral_reward(referrer_id: int, referred_user_id: int, new_balance: int):
-    """Notify the referrer they earned credits; tell the new user they were referred."""
     await notify_user(
         referrer_id,
         f"Referral Reward\n\n"
@@ -1515,21 +2085,46 @@ async def cmd_refer(event):
 async def cmd_help(event):
     msg  = await event.reply("▍")
     text = (
-        "How to use this bot\n\n"
-        "Paste any personal wallet address into the chat.\n"
-        "The bot detects the chain automatically and returns the full balance with USD value.\n\n"
-        "Supported chains:\n\n"
-        "Ethereum — ETH and ERC-20 tokens\n"
-        "BNB Smart Chain — BNB and BEP-20 tokens\n"
-        "Polygon — MATIC and tokens\n"
-        "Bitcoin — BTC balance and recent transactions\n"
-        "Litecoin — LTC balance and recent transactions\n"
-        "Tron — TRX, USDT and USDC (TRC-20)\n"
-        "TON — TON and jetton balances\n\n"
-        "Each check costs 1 credit.\n"
-        "You can check up to 3 addresses in one message.\n\n"
-        "Exchange deposit addresses from Binance, Bybit, OKX and similar platforms\n"
-        "will not return correct results. Use only your own personal wallet address."
+        "📖 How to Use & Supported Chains\n\n"
+        "Paste any personal crypto wallet address into the chat.\n"
+        "The bot automatically detects the blockchain and returns full balances and USD values.\n\n"
+        "🌐 25 Supported Blockchain Networks & Cryptos:\n\n"
+        "🔹 EVM Networks (15 Chains):\n"
+        "  • Ethereum (ETH & ERC-20 Tokens)\n"
+        "  • BNB Smart Chain (BNB & BEP-20 Tokens)\n"
+        "  • Polygon (MATIC / POL & Tokens)\n"
+        "  • Arbitrum One (ETH, ARB, USDT, USDC)\n"
+        "  • OP Mainnet (ETH, OP, USDT, USDC)\n"
+        "  • Base (ETH, USDC, AERO)\n"
+        "  • Avalanche C-Chain (AVAX, USDT.e, USDC.e)\n"
+        "  • Fantom Opera (FTM, USDT, USDC)\n"
+        "  • Cronos EVM (CRO, USDC)\n"
+        "  • zkSync Era (ETH, ZK, USDC)\n"
+        "  • Linea (ETH, USDC)\n"
+        "  • Blast (ETH, USDB, BLAST)\n"
+        "  • Mantle (MNT, USDT, USDC)\n"
+        "  • Celo (CELO, cUSD)\n"
+        "  • Moonbeam (GLMR, USDC)\n\n"
+        "🔹 Non-EVM Networks (10 Chains):\n"
+        "  • Solana (SOL & SPL Tokens: USDC, USDT, BONK)\n"
+        "  • Bitcoin (BTC Balance & Recent Txs)\n"
+        "  • Bitcoin Cash (BCH Balance)\n"
+        "  • Dogecoin (DOGE Balance)\n"
+        "  • Litecoin (LTC Balance & Txs)\n"
+        "  • Ripple (XRP Balance)\n"
+        "  • Cardano (ADA Balance)\n"
+        "  • Cosmos Hub (ATOM Balance)\n"
+        "  • Near Protocol (NEAR Balance)\n"
+        "  • Stellar (XLM Balance)\n"
+        "  • Algorand (ALGO Balance)\n"
+        "  • TON (TON & Jetton Tokens)\n"
+        "  • Sui Network (SUI Balance)\n"
+        "  • Kaspa (KAS Balance)\n"
+        "  • Aptos (APT Balance)\n\n"
+        "📌 Usage Info:\n"
+        "• Each check costs 1 credit.\n"
+        "• You can paste up to 3 addresses in a single message.\n"
+        "⚠️ Do not use exchange deposit addresses (Binance, OKX, etc.), as they will not reflect correct balances."
     )
     await msg.edit(text)
 
@@ -1654,7 +2249,6 @@ async def admin_broadcast(event):
     user_ids = await get_all_user_ids()
     sent     = 0
     failed   = 0
-    # Edit the original reply as progress updates rather than sending a second message
     status_msg = await event.reply(f"Sending to {len(user_ids)} users...")
     for uid in user_ids:
         try:
@@ -1718,7 +2312,6 @@ async def handler(event):
 
     text = event.raw_text or ""
 
-    # Let all slash commands fall through to their own handlers
     if re.match(r"^/(start|balance|refer|help|commands|admin|addcredit|removecredit|user|stats|broadcast|setchannel|forcejoin)", text.strip()):
         return
 
@@ -1848,10 +2441,9 @@ async def handler(event):
         await msg.edit(build_no_credits_message(user_id))
         return
 
-    # Send instant status message so the user immediately sees progress
-    status_msg = await event.reply("🔎 `Checking wallet address...`\n⏳ `Querying balances on supported blockchains...`")
+    status_msg = await event.reply("🔎 `Checking wallet address...`\n⏳ `Querying balances across 25 multi-chain networks...`")
 
-    connector = aiohttp.TCPConnector(limit=30, ttl_dns_cache=300)
+    connector = aiohttp.TCPConnector(limit=40, ttl_dns_cache=300)
     async with aiohttp.ClientSession(connector=connector) as session:
         await ensure_prices(session)
 
@@ -1897,7 +2489,7 @@ async def handler(event):
 # ═══════════════════════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
-    print("Starting wallet checker bot (fast async + USD mode + credit system)...")
+    print("Starting 25-network multi-chain wallet checker bot...")
 
     async def main():
         # Initialize database
@@ -1930,5 +2522,3 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         print("Bot stopped.")
-
-
