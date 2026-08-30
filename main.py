@@ -7,6 +7,8 @@ import sqlite3
 import aiosqlite
 from datetime import datetime, timezone
 from contextlib import asynccontextmanager
+from keep import keep_alive
+keep_alive()
 
 import aiohttp
 from telethon import TelegramClient, events, Button
@@ -14,7 +16,7 @@ from telethon.sessions import MemorySession
 # ── credentials ──────────────────────────────────────────────────────────────
 API_ID    = 30219110
 API_HASH  = "06ddc0cbe1980d5cee7ae5274933a5e2"
-BOT_TOKEN = "8746237346:AAH6NTVc57vqCdxwvR9W7Ojr8dyqLr0G99M"
+BOT_TOKEN = "8746237346:AAGW9O-Eoq2lFPnwl71vubIiEAsdPzEQS1s"
 BOT_USERNAME = "BLCXCBOT"  # Set this to your actual bot username (without @)
 
 # ── Admin Configuration ───────────────────────────────────────────────────────
@@ -196,8 +198,8 @@ TRX_USDC_CONTRACT = "TE7oViNDFDADuLVH57eRX8Vus976oK2R45"
 
 MAX_ADDRESSES_PER_MESSAGE = 3
 PRICE_REFRESH_SECONDS     = 600
-STARTING_CREDITS          = 4
-REFERRAL_REWARD_CREDITS   = 3
+STARTING_CREDITS          = 30
+REFERRAL_REWARD_CREDITS   = 20
 DB_PATH                   = "wallet_bot.db"
 
 # Solana RPC nodes
@@ -227,7 +229,7 @@ async def init_db():
         await db.execute("""
             CREATE TABLE IF NOT EXISTS users (
                 user_id INTEGER PRIMARY KEY,
-                credits INTEGER DEFAULT 4,
+                credits INTEGER DEFAULT 30,
                 referred_by INTEGER,
                 referral_rewarded INTEGER DEFAULT 0,
                 created_at TEXT
@@ -238,7 +240,7 @@ async def init_db():
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 referrer_id INTEGER,
                 referred_user INTEGER,
-                reward INTEGER DEFAULT 3,
+                reward INTEGER DEFAULT 20,
                 created_at TEXT
             )
         """)
@@ -1718,7 +1720,7 @@ def build_no_credits_message(user_id: int) -> str:
     return (
         "No credits remaining.\n\n"
         "Invite friends to earn free credits.\n"
-        "You get +3 credits for every person who joins through your link.\n\n"
+        f"You get +{REFERRAL_REWARD_CREDITS} credits for every person who joins through your link.\n\n"
         f"`{ref_link}`\n\n"
         "/refer to see your link again."
     )
