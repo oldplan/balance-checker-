@@ -7,8 +7,6 @@ import sqlite3
 import aiosqlite
 from datetime import datetime, timezone
 from contextlib import asynccontextmanager
-from keep import keep_alive
-keep_alive()
 
 import aiohttp
 from telethon import TelegramClient, events, Button
